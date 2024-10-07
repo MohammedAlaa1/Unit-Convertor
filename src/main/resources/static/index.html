@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Unit Converter</h1>
+<div class="conversion-options">
+  <div class="conversion-option" onclick="showLengthConverter()">Length</div>
+  <div class="conversion-option" onclick="showWeightConverter()">Weight</div>
+  <div class="conversion-option" onclick="showTemperatureConverter()">Temperature</div>
+</div>
+
+<div id="length" class="form-container" style="display: none;">
+  <h2>Length Converter</h2>
+  <form id="lengthForm" onsubmit="return convertLength(event)">
+    <input type="number" name="value" placeholder="Enter length" required>
+    <select name="fromUnit" required>
+      <option value="" disabled selected>From</option>
+      <option value="millimeter">Millimeter</option>
+      <option value="centimeter">Centimeter</option>
+      <option value="meter">Meter</option>
+      <option value="kilometer">Kilometer</option>
+      <option value="inch">Inch</option>
+      <option value="foot">Foot</option>
+      <option value="yard">Yard</option>
+      <option value="mile">Mile</option>
+    </select>
+    <select name="toUnit" required>
+      <option value="" disabled selected>To</option>
+      <option value="millimeter">Millimeter</option>
+      <option value="centimeter">Centimeter</option>
+      <option value="meter">Meter</option>
+      <option value="kilometer">Kilometer</option>
+      <option value="inch">Inch</option>
+      <option value="foot">Foot</option>
+      <option value="yard">Yard</option>
+      <option value="mile">Mile</option>
+    </select>
+    <button type="submit">Convert</button>
+  </form>
+  <div id="result" style="display: none;">
+    <h3>Result of Your Calculation:</h3>
+    <p id="resultText"></p>
+    <button id="resetButton" onclick="resetForm()" style="display: none;">Reset</button>
+  </div>
+</div>
+
+<div id="weight" class="form-container" style="display: none;">
+  <h2>Weight Converter</h2>
+  <form id="weightForm" onsubmit="return convertWeight(event)">
+    <input type="number" name="value" placeholder="Enter weight" required>
+    <select name="fromUnit" required>
+      <option value="" disabled selected>From</option>
+      <option value="milligram">Milligram</option>
+      <option value="gram">Gram</option>
+      <option value="kilogram">Kilogram</option>
+      <option value="ounce">Ounce</option>
+      <option value="pound">Pound</option>
+    </select>
+    <select name="toUnit" required>
+      <option value="" disabled selected>To</option>
+      <option value="milligram">Milligram</option>
+      <option value="gram">Gram</option>
+      <option value="kilogram">Kilogram</option>
+      <option value="ounce">Ounce</option>
+      <option value="pound">Pound</option>
+    </select>
+    <button type="submit">Convert</button>
+  </form>
+  <div id="weightResult" style="display: none;">
+    <h3>Result of Your Calculation:</h3>
+    <p id="weightResultText"></p>
+    <button id="weightResetButton" onclick="resetWeightForm()" style="display: none;">Reset</button>
+  </div>
+</div>
+
+<div id="temperature" class="form-container" style="display: none;">
+  <h2>Temperature Converter</h2>
+  <form id="temperatureForm" onsubmit="return convertTemperature(event)">
+    <input type="number" name="value" placeholder="Enter temperature" required>
+    <select name="fromUnit" required>
+      <option value="" disabled selected>From</option>
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="kelvin">Kelvin</option>
+    </select>
+    <select name="toUnit" required>
+      <option value="" disabled selected>To</option>
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="kelvin">Kelvin</option>
+    </select>
+    <button type="submit">Convert</button>
+  </form>
+  <div id="temperatureResult" style="display: none;">
+    <h3>Result of Your Calculation:</h3>
+    <p id="temperatureResultText"></p>
+    <button id="temperatureResetButton" onclick="resetTemperatureForm()" style="display: none;">Reset</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
